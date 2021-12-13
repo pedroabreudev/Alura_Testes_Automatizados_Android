@@ -19,5 +19,15 @@ public class LeilaoTest {
 
     }
 
-    
+    @Test
+    public void getMaiorLance(){
+        Leilao console = new Leilao("Console");
+        console.propoe(new Lance(new Usuario("Alex"), 200.0));
+
+        double maiorLanceDevolvido = console.getMaiorLance();
+
+        assertEquals(200.0, maiorLanceDevolvido, 0.0001);
+    }
+
+
 }
