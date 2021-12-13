@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import java.util.List;
+
 public class LeilaoTest {
 
     private final Leilao CONSOLE = new Leilao("Console");
@@ -57,8 +59,7 @@ public class LeilaoTest {
 
         double menorLanceDevolvido = CONSOLE.getMenorLance();
 
-        assertEquals(100.0, menorLanceDevolvido, 0.0001);
-    }
+        assertEquals(100.0, menorLanceDevolvido, 0.0001);    }
 
     @Test
     public void deve_DevolverMenorLance_QuandoRecebeMaisDeUmLanceEmOrdemCrescente() {
@@ -68,7 +69,6 @@ public class LeilaoTest {
         double menorLanceDevolvido = CONSOLE.getMenorLance();
 
         assertEquals(100.0, menorLanceDevolvido, 0.0001);
-
     }
 
     @Test
@@ -79,7 +79,18 @@ public class LeilaoTest {
         double menorLanceDevolvido = CONSOLE.getMenorLance();
 
         assertEquals(4000.0, menorLanceDevolvido, 0.0001);
+    }
 
+    @Test
+    public void deve_DevolverTresMaioresLances_QuandoRecebeExatosTresLances(){
+        CONSOLE.propoe(new Lance(ALEX, 200.0));
+        CONSOLE.propoe(new Lance(new Usuario("Fran"), 300.0));
+        CONSOLE.propoe(new Lance(ALEX, 400.0));
+
+        // Test Driven Development
+        List<Lance> tresMaioresLancesDevolvidos = CONSOLE.tresMaioresLances();
+
+        assertEquals(3, tresMaioresLancesDevolvidos.size());
     }
 
 }
