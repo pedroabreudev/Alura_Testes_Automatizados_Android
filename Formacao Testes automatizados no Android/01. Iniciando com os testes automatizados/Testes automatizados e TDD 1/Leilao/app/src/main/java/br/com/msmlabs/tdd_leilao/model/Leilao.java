@@ -50,6 +50,12 @@ public class Leilao implements Serializable {
     }
 
     public List<Lance> tresMaioresLances() {
-        return lances.subList(0, lances.size());
+        int quantidadeLances = lances.size();
+
+        if (quantidadeLances > 3) {
+            quantidadeLances = 3;
+        }
+
+        return lances.subList(0, quantidadeLances);
     }
 }
