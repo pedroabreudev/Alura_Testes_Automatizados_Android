@@ -157,18 +157,18 @@ public class LeilaoTest {
     @Test
     public void naoDeve_AdicionarLance_QuandoForMenorQueOMaiorLance() {
         CONSOLE.propoe(new Lance(ALEX, 500.0));
-        CONSOLE.propoe(new Lance(new Usuario("Fran"), 400.0));
-
-        int quantidadeLancesDevolvida = CONSOLE.quantidadeLances();
-
-        assertEquals(1, quantidadeLancesDevolvida);
-
+        try{
+            CONSOLE.propoe(new Lance(new Usuario("Fran"), 400.0));
+            fail("Era esperada uma Runtime Exception");
+        }catch (RuntimeException exception){
+            // teste passou
+        }
     }
 
     @Test
     public void naoDeve_AdicionarLance_QuandoForOMesmoUsuarioDoUltimoLance(){
         CONSOLE.propoe(new Lance(ALEX, 500.0));
-        CONSOLE.propoe(new Lance(new Usuario("Alex"), 600.0));
+        CONSOLE.propoe(new Lance(ALEX, 600.0));
 
         int quantidadeLancesDevolvida = CONSOLE.quantidadeLances();
 
