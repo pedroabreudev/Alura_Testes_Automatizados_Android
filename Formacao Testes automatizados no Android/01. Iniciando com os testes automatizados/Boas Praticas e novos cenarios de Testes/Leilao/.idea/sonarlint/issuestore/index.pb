@@ -1,6 +1,4 @@
 
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 ‹
 [app/src/main/java/br/com/msmlabs/tdd_leilao/ui/recyclerview/adapter/ListaLeilaoAdapter.java,0\a\0a7e05e6ce4045098735dc886e7305864dc14b35
 €
