@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Learning/Alura/Alura_Testes_Automatizados_Android/Formacao Testes automatizados no Android/01. Iniciando com os testes automatizados/Boas Praticas e novos cenarios de Testes/Leilao/app/src/main/res/layout/activity_lances_leilao.xml" value="0.34923076923076923" />
+        <entry key="..\:/Learning/Alura/Alura_Testes_Automatizados_Android/Formacao Testes automatizados no Android/01. Iniciando com os testes automatizados/Boas Praticas e novos cenarios de Testes/Leilao/app/src/main/res/layout/activity_lista_leilao.xml" value="0.3546875" />
+        <entry key="..\:/Learning/Alura/Alura_Testes_Automatizados_Android/Formacao Testes automatizados no Android/01. Iniciando com os testes automatizados/Boas Praticas e novos cenarios de Testes/Leilao/app/src/main/res/layout/item_leilao.xml" value="0.3546875" />
         <entry key="app/src/main/res/layout/activity_lances_leilao.xml" value="0.296195652173913" />
         <entry key="app/src/main/res/layout/activity_lista_leilao.xml" value="0.23020833333333332" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.296195652173913" />
