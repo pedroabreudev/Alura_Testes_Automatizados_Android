@@ -1,13 +1,14 @@
 package br.com.msmlabs.tdd_leilao.model;
 
+import static org.hamcrest.CoreMatchers.both;
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.contains;
-import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.number.IsCloseTo.closeTo;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
+import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -91,7 +92,7 @@ public class LeilaoTest {
         List<Lance> tresMaioresLancesDevolvidos = CONSOLE.tresMaioresLances();
 
         //assertEquals(3, tresMaioresLancesDevolvidos.size());
-        assertThat(tresMaioresLancesDevolvidos, hasSize(equalTo(3)));
+        //assertThat(tresMaioresLancesDevolvidos, hasSize(equalTo(3)));
 
         //assertEquals(400.0,
         //tresMaioresLancesDevolvidos.get(0).getValor(), DELTA);
@@ -103,10 +104,17 @@ public class LeilaoTest {
         //assertEquals(200.0,
         //tresMaioresLancesDevolvidos.get(2).getValor(), DELTA);,
 
-        assertThat(tresMaioresLancesDevolvidos, contains(
-                new Lance(ALEX, 400.0),
-                new Lance(new Usuario("Fran"), 300.0),
-                new Lance(ALEX, 200.0)));
+//        assertThat(tresMaioresLancesDevolvidos, contains(
+//                new Lance(ALEX, 400.0),
+//                new Lance(new Usuario("Fran"), 300.0),
+//                new Lance(ALEX, 200.0)));
+
+        assertThat(tresMaioresLancesDevolvidos,
+                both(Matchers.<Lance>hasSize(3))
+                        .and(contains(
+                                new Lance(ALEX, 400.0),
+                                new Lance(new Usuario("Fran"), 300.0),
+                                new Lance(ALEX, 200.0))));
     }
 
     @Test
